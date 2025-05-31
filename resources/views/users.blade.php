@@ -35,17 +35,14 @@
             <div class="modal-body">
                 <p><strong>Nama:</strong> <span id="viewName"></span></p>
                 <p><strong>Email:</strong> <span id="viewEmail"></span></p>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>
 </div>
 @endsection
 @push('js')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 <script type="text/javascript">
@@ -86,6 +83,7 @@
         $.get("users/" + id, function(data) {
             $('#viewName').text(data.name);
             $('#viewEmail').text(data.email);
+            // Use Bootstrap 4 modal method
             $('#viewModal').modal('show');
         });
     });
